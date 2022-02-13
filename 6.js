@@ -1,16 +1,16 @@
 function convert(s, numRows) {
-  let sequence = 1;
+  let sequence = 0;
   let arr = [];
   let obj = {};
   let answer = '';
 
   for (let i = 0; i < s.length; i++) {
-    if (sequence === 1) {
+    if (sequence === 0) {
       add = true
       sub = false
     }
 
-    if (sequence === numRows) {
+    if (sequence === numRows - 1) {
       add = false
       sub = true
     }
@@ -45,4 +45,4 @@ function convert(s, numRows) {
   return answer;
 }
 
-console.log(convert("PAYPALISHIRING", 3));
+console.log(convert("PAYPALISHIRING", 4));
