@@ -46,3 +46,4 @@ function convert(s, numRows) {
 }
 
 console.log(convert("PAYPALISHIRING", 4));
+console.log(convert("PAYPALISHIRING", 3));
