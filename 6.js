@@ -1,6 +1,7 @@
 function convert(s, numRows) {
   let sequence = 0;
-  let arr = [];
+  let add = false
+  let sub = false
   let obj = {};
   let answer = '';
 
@@ -16,7 +17,6 @@ function convert(s, numRows) {
     }
 
     if (add) {
-      arr.push(sequence);
       if (obj[sequence]) {
         obj[sequence] += s[i]
       } else {
@@ -26,7 +26,6 @@ function convert(s, numRows) {
     }
     
     if (sub) {
-      arr.push(sequence);
       if (obj[sequence]) {
         obj[sequence] += s[i]
       } else {
@@ -36,9 +35,11 @@ function convert(s, numRows) {
     }
   }
 
-  let objKeys = Object.keys(obj);
+  let objKeys = Object.keys(obj).map(i => parseInt(i));
 
-  objKeys.map(item => {
+  objKeys.sort(function(a, b) {
+    return a - b;
+  }).map(item => {
     answer += obj[item]
   })
 
